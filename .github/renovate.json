@@ -4,6 +4,9 @@
   ],
   "packageRules": [
     {
+      "matchPackageNames": [
+        "*"
+      ],
       "automerge": true
     }
   ]
