@@ -7,7 +7,7 @@
       "matchPackageNames": [
         "*"
       ],
-      "automerge": true
+      "automerge": false
     }
   ],
   "recreateWhen": "always"
