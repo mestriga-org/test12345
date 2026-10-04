@@ -9,5 +9,6 @@
       ],
       "automerge": true
     }
-  ]
+  ],
+  "recreateWhen": "always"
 }
