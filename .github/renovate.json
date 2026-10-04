@@ -1,5 +1,10 @@
 {
   "extends": [
     "local>mestriga-org/renovate-presets"
+  ],
+  "packageRules": [
+    {
+      "automerge": true
+    }
   ]
 }
