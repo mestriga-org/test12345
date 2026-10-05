@@ -4,6 +4,8 @@ on:
     branches: [main]
 jobs:
   test:
+    permissions:
+      statuses: write
     runs-on: ubuntu-slim
     steps:
       - uses: actions/github-script@v8
