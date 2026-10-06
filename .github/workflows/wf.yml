@@ -4,6 +4,7 @@ jobs:
   first:
     runs-on: ubuntu-slim
     steps:
+      - run: exit 1
       - run: sleep 120
   second:
     needs:
