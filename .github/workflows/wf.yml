@@ -1,14 +1,13 @@
 on:
   workflow_dispatch:
 jobs:
-  first:
+  my-one:
+    name: my
     runs-on: ubuntu-slim
     steps:
       - run: sleep 120
-  second:
-    if: (!cancelled())
-    needs:
-      - first
+  my-two:
+    name: my
     runs-on: ubuntu-slim
     steps:
-      - run: echo oi
+      - run: sleep 120
