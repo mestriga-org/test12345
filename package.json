@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "another",
   "packageManager": "pnpm@12.8.0",
   "type": "module"
 }
