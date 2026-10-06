@@ -7,8 +7,9 @@ jobs:
       - run: exit 1
       - run: sleep 120
   second:
+    if: (!cancelled())
     needs:
       - first
     runs-on: ubuntu-slim
     steps:
-      - run: sleep 120
+      - run: echo oi
