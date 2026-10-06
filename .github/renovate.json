@@ -9,6 +9,5 @@
       ],
       "automerge": false
     }
-  ],
-  "recreateWhen": "always"
+  ]
 }
