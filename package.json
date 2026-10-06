@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "another",
+  "name": goo,
   "packageManager": "pnpm@12.8.0",
   "type": "module"
 }
