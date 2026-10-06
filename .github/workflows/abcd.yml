@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: main
+jobsas:
+  my-one:
+    name: my
+    runs-on: ubuntu-slim
+    steps:
+      - run: exit 0
+  my-two:
+    name: my
+    runs-on: ubuntu-slim
+    steps:
+      - run: sleep 10; exit 1
