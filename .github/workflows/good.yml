@@ -15,16 +15,10 @@ jobs:
   second:
     needs: delay
     uses: $/.github/workflows/reusable.yml
-  dependent:
+  third:
     needs:
       - first
     runs-on: ubuntu-slim
-    steps:
-      - run: exit
-  third:
-    needs:
-      - dependent
-    runs-on: ubuntu-slim
-    if: (failure() || cancelled() || needs.dependent.result == 'cancelled')
+    if: (!cancelled() && (failure() || needs.first.result == 'cancelled'))
     steps:
       - run: exit 1
