@@ -15,3 +15,7 @@ jobs:
   cancel:
     needs: delay
     uses: $/.github/workflows/reusable.yml
+  ok:
+    runs-on: ubuntu-slim
+    steps:
+      - run: true
