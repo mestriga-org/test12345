@@ -1,0 +1,13 @@
+# This workflow is managed by gh actions-lock.
+
+on:
+  workflow_call:
+concurrency:
+  group: reusable
+  cancel-in-progress: true
+
+jobs:
+  my-one:
+    runs-on: ubuntu-slim
+    steps:
+      - run: sleep 30
