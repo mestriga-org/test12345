@@ -4,7 +4,6 @@ on:
   workflow_call:
 jobs:
   child-check:
-    continue-on-error: true
     runs-on: ubuntu-slim
     steps:
       - run: exit 1
