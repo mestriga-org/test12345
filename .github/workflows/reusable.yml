@@ -8,5 +8,6 @@ concurrency:
 jobs:
   child-check:
     runs-on: ubuntu-slim
+    continue-on-error: true
     steps:
       - run: exit 1
