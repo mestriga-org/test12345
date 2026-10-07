@@ -16,4 +16,4 @@ jobs:
     if: (!cancelled()) && needs.skips.result == 'success'
     runs-on: ubuntu-slim
     steps:
-      - run: echo running
+      - run: echo ${{ needs.skips.result }}
