@@ -7,18 +7,11 @@ on:
     branches: main
 jobs:
   first:
-    uses: $/.github/workflows/reusable.yml
-  delay:
-    runs-on: ubuntu-slim
-    steps:
-      - run: sleep 1
-  second:
-    needs: delay
-    uses: $/.github/workflows/reusable.yml
+    uses: $/.github/workflows/reusable2.yml
   third:
     needs:
       - first
     runs-on: ubuntu-slim
-    if: (!cancelled() && (failure() || needs.first.result == 'cancelled'))
+    if: (!cancelled() && (failure() || contains(needs.*.result, 'cancelled')))
     steps:
       - run: exit 1
