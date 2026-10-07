@@ -2,8 +2,11 @@
 
 on:
   workflow_call:
+concurrency:
+    group: reusable
+    cancel-in-progress: true
 jobs:
   child-check:
     runs-on: ubuntu-slim
     steps:
-      - run: exit 1
+      - run: sleep 10

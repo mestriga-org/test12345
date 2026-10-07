@@ -6,12 +6,25 @@ on:
   push:
     branches: main
 jobs:
-  master-check:
+  first:
     uses: $/.github/workflows/reusable.yml
-  report-result:
+  second:
+    uses: $/.github/workflows/reusable.yml
+  third:
     needs:
-      - master-check
+      - second
     if: (!cancelled())
     runs-on: ubuntu-slim
     steps:
-      - run: echo ${{ needs.master-check.result }}
+      - run: echo ${{ needs.second.result }}
+
+  #  runs-on: ubuntu-slim
+  #  steps:
+  #    - run: echo ${{ needs.master-check.result }}
+  #report-result:
+  #  needs:
+  #    - master-check
+  #  if: (!cancelled() && contains('failed'))
+  #  runs-on: ubuntu-slim
+  #  steps:
+  #    - run: echo ${{ needs.master-check.result }}
