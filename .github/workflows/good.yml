@@ -11,7 +11,7 @@ jobs:
   report-result:
     needs:
       - master-check
-    if: (!cancelled() && (contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'failure')))
+    if: (!cancelled())
     runs-on: ubuntu-slim
     steps:
       - run: exit 1
