@@ -16,7 +16,6 @@ jobs:
       - run: echo B
   delay:
     runs-on: ubuntu-slim
-    if: cancelled()
     steps:
       - run: sleep 1
   cancel:
