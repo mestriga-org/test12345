@@ -11,6 +11,9 @@ jobs:
   second:
     uses: $/.github/workflows/reusable.yml
   third:
+    needs:
+      - first
+      - second
     runs-on: ubuntu-slim
     steps:
       - uses: actions/github-script@v9
