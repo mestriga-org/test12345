@@ -8,6 +8,7 @@ on:
 jobs:
   my-one:
     runs-on: ubuntu-slim
+    continue-on-error: true
     steps:
       - run: exit 1
   my-three:
@@ -15,4 +16,4 @@ jobs:
     runs-on: ubuntu-slim
     needs: my-one
     steps:
-      - uses: $/.github/actions/all
+      - run: echo a
