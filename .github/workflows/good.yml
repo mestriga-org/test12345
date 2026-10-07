@@ -14,4 +14,4 @@ jobs:
     if: (!cancelled())
     runs-on: ubuntu-slim
     steps:
-      - run: echo ${{ needs.master-check.result }})
+      - run: echo ${{ needs.master-check.result }}
