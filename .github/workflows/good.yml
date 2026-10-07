@@ -6,27 +6,25 @@ on:
   push:
     branches: main
 jobs:
-  first:
+  D:
     runs-on: ubuntu-slim
+    if: true
     steps:
-      - run: false
-  second:
-    needs: first
-    if: always()
+      - run: echo D
+  A:
+    needs: [D]
     runs-on: ubuntu-slim
+    if: false
     steps:
-      - run: true
-  third:
-    if: failure()
-    needs:
-      - second
-    runs-on: ubuntu-slim
+      - run: echo A
+  B:
+    runs-on: ubuntu-latest
+    if: false
     steps:
-      - run: echo failure
-  fourth:
-    if: success()
-    needs:
-      - second
-    runs-on: ubuntu-slim
+      - run: echo B
+  C:
+    runs-on: ubuntu-latest
+    needs: [A,B]
+    if: ${{ !cancelled() && contains(needs.*.result, 'success') }}
     steps:
-      - run: echo success
+      - run: echo C
