@@ -10,3 +10,8 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - run: sleep 10
+  cancelled:
+    if: cancelled()
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo cancelling
