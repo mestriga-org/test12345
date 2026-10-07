@@ -12,6 +12,7 @@ jobs:
     steps:
       - run: false
   depend:
+    if: success()
     runs-on: ubuntu-slim
     steps:
       - run: echo running
