@@ -7,11 +7,12 @@ on:
     branches: main
 jobs:
   my-one:
-    if: false
     runs-on: ubuntu-slim
     steps:
-      - run: exit
+      - run: exit 1
   my-three:
+    if: (!cancelled())
     runs-on: ubuntu-slim
+    needs: my-one
     steps:
       - uses: $/.github/actions/all
