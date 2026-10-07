@@ -25,6 +25,6 @@ jobs:
     needs:
       - dependent
     runs-on: ubuntu-slim
-    if: (!cancelled() && (failure() || needs.dependent.result == 'cancelled'))
+    if: (failure() || needs.dependent.result == 'cancelled')
     steps:
       - run: exit 1
