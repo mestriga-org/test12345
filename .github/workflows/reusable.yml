@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: sleep 10
   cancelled:
-    if: cancelled()
+    if: always()
     runs-on: ubuntu-slim
     steps:
-      - run: echo cancelling
+      - run: echo always
