@@ -13,7 +13,7 @@ jobs:
       - run: false
   depend:
     needs: skips
-    if: needs.skips.result == 'failure'
+    if: (!cancelled()) && needs.skips.result == 'failure'
     runs-on: ubuntu-slim
     steps:
       - run: echo running
