@@ -13,10 +13,10 @@ jobs:
   third:
     needs:
       - second
-    if: (!cancelled())
+    if: failure()
     runs-on: ubuntu-slim
     steps:
-      - run: echo ${{ needs.second.result }}
+      - run: echo failed
 
   #  runs-on: ubuntu-slim
   #  steps:
