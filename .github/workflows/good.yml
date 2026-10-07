@@ -7,18 +7,18 @@ on:
     branches: main
 jobs:
   A:
-    runs-on: ubuntu-slim
-    if: false
-    steps:
-      - run: echo A
+    uses: $/.github/workflows/reusable.yml
   B:
     needs: [A]
-    runs-on: ubuntu-latest
-    if: always()
+    runs-on: ubuntu-slim
+    if: cancelled()
     steps:
       - run: echo B
-  C:
-    runs-on: ubuntu-latest
-    needs: [B]
+  delay:
+    runs-on: ubuntu-slim
+    if: cancelled()
     steps:
-      - run: echo C
+      - run: sleep 1
+  cancel:
+    needs: [delay]
+    uses: $/.github/workflows/reusable.yml
