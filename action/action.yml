@@ -1,0 +1,8 @@
+name: Reovate commit status check
+description: Checks renovate commit statuses
+runs:
+  using: composite
+  steps:
+    - if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+      run: exit 1
+      shell: sh
