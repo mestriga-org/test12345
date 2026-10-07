@@ -5,7 +5,7 @@ on:
 concurrency:
     group: reusable
     cancel-in-progress: true
-jobs:
+jobsa:
   child-check:
     runs-on: ubuntu-slim
     steps:
