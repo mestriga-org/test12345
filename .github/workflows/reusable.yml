@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - run: sleep 10
-  cancelled:
-    needs: child-check
-    if: cancelled()
+  failure:
     runs-on: ubuntu-slim
     steps:
-      - run: echo always
+      - run: false

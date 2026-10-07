@@ -8,16 +8,10 @@ on:
 jobs:
   A:
     uses: $/.github/workflows/reusable.yml
-  B:
-    needs: [A]
-    runs-on: ubuntu-slim
-    if: cancelled()
-    steps:
-      - run: echo B
   delay:
     runs-on: ubuntu-slim
     steps:
       - run: sleep 1
   cancel:
-    needs: [delay]
+    needs: delay
     uses: $/.github/workflows/reusable.yml
