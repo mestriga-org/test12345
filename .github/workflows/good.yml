@@ -6,6 +6,10 @@ on:
   push:
     branches: main
 jobs:
+  before:
+    runs-on: ubuntu-slim
+    steps:
+      - run: exit 0
   first:
     uses: $/.github/workflows/reusable2.yml
   third:
