@@ -1,16 +1,18 @@
+# This workflow is managed by gh actions-lock.
+
 on:
   workflow_dispatch:
   pull_request:
   push:
     branches: main
-jobsas:
+jobs:
   my-one:
-    name: my
+    if: false
     runs-on: ubuntu-slim
     steps:
       - run: exit 0
   my-two:
-    name: my
+    needs: my-one
     runs-on: ubuntu-slim
     steps:
       - run: sleep 10; exit 1
