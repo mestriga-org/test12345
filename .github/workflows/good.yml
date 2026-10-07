@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: exit 0
   first:
-    uses: mestriga-org/test12345/.github/workflows/reusable.yml@main
+    uses: mestriga-org/test12345/.github/workflows/reusable2.yml@main
   third:
     needs:
       - first
