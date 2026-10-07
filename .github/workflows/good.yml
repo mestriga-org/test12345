@@ -9,7 +9,7 @@ jobs:
   my-one:
     runs-on: ubuntu-slim
     steps:
-      - run: exit 1
+      - run: sleep 30
   my-two:
     needs: my-one
     runs-on: ubuntu-slim
