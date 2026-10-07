@@ -6,12 +6,16 @@ on:
   push:
     branches: main
 jobs:
-  master-check:
-    uses: $/.github/workflows/reusable.yml
-  report-result:
-    needs:
-      - master-check
-    if: (!cancelled())
+  before:
     runs-on: ubuntu-slim
+    steps:
+      - run: exit 0
+  first:
+    uses: mestriga-org/test12345/.github/workflows/reusable.yml@main
+  third:
+    needs:
+      - first
+    runs-on: ubuntu-slim
+    if: (!cancelled() && (failure() || contains(needs.*.result, 'cancelled')))
     steps:
       - run: exit 1
