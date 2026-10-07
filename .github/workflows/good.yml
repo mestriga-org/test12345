@@ -10,9 +10,10 @@ jobs:
   second:
     uses: $/.github/workflows/reusable.yml
   third:
+    continue-on-error: true
     needs:
       - second
     runs-on: ubuntu-slim
     if: (!cancelled())
     steps:
-      - run: echo ${{ needs.second.result }}
+      - run: echo ${{ needs.second.result }}; exit 1
