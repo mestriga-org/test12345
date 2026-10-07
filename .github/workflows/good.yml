@@ -14,6 +14,6 @@ jobs:
     needs:
       - second
     runs-on: ubuntu-slim
-    if: (!cancelled())
+    if: (failure())
     steps:
       - run: echo ${{ needs.second.result }}
