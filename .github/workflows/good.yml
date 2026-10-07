@@ -7,13 +7,14 @@ on:
     branches: main
 jobs:
   my-one:
-    runs-on: ubuntu-slim
-    continue-on-error: true
-    steps:
-      - run: exit 1
+    uses: $/.github/workflows/reusable.yml
+  my-two:
+    uses: $/.github/workflows/reusable.yml
   my-three:
     if: (!cancelled())
     runs-on: ubuntu-slim
-    needs: my-one
+    needs:
+      - my-one
+      - my-two
     steps:
       - run: echo a
