@@ -12,9 +12,6 @@ jobs:
     steps:
       - run: exit
   my-three:
-    if: false
-    needs:
-      - my-one
     runs-on: ubuntu-slim
     steps:
-      - run: echo a
+      - uses: $/.github/actions/all
