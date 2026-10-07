@@ -10,4 +10,4 @@ jobs:
   my-one:
     runs-on: ubuntu-slim
     steps:
-      - run: sleep 30
+      - run: sleep 10
