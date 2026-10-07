@@ -8,13 +8,23 @@ on:
 jobs:
   first:
     uses: $/.github/workflows/reusable.yml
+  delay:
+    runs-on: ubuntu-slim
+    steps:
+      - run: sleep 1
   second:
-    needs: first
+    needs: delay
     uses: $/.github/workflows/reusable.yml
+  dependent:
+    needs:
+      - first
+    runs-on: ubuntu-slim
+    steps:
+      - run: exit
   third:
     needs:
-      - second
+      - dependent
     runs-on: ubuntu-slim
-    if: (!cancelled() && (failure() || needs.second.result == 'cancelled'))
+    if: (!cancelled() && (failure() || needs.dependent.result == 'cancelled'))
     steps:
       - run: exit 1
