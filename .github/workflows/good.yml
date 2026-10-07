@@ -6,8 +6,10 @@ on:
   push:
     branches: main
 jobs:
-
+  first:
+    uses: $/.github/workflows/reusable.yml
   second:
+    needs: first
     uses: $/.github/workflows/reusable.yml
   third:
     needs:

@@ -9,8 +9,4 @@ jobs:
   child-check:
     runs-on: ubuntu-slim
     steps:
-      - run: exit 1
-  child-check-2:
-    runs-on: ubuntu-slim
-    steps:
-      - run: exit
+      - run: sleep 10
