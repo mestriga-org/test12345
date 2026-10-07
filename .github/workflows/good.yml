@@ -6,14 +6,14 @@ on:
   push:
     branches: main
 jobs:
-  fail:
+  skips:
+    if: false
     continue-on-error: true
     runs-on: ubuntu-slim
     steps:
       - run: false
   depend:
-    if: failure()
-    needs: fail
+    needs: skips
     runs-on: ubuntu-slim
     steps:
       - run: echo running
