@@ -3,7 +3,7 @@
 on:
   workflow_call:
 jobs:
-  my-one:
+  child-check:
     continue-on-error: true
     runs-on: ubuntu-slim
     steps:

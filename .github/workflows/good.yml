@@ -6,5 +6,5 @@ on:
   push:
     branches: main
 jobs:
-  my-two:
+  master-check:
     uses: $/.github/workflows/reusable.yml
