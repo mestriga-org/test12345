@@ -11,7 +11,8 @@ jobs:
     steps:
       - run: sleep 10
   cancelled:
-    if: always()
+    needs: child-check
+    if: cancelled()
     runs-on: ubuntu-slim
     steps:
       - run: echo always
