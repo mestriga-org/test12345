@@ -6,16 +6,12 @@ on:
   push:
     branches: main
 jobs:
-  A:
-    uses: $/.github/workflows/reusable.yml
-  delay:
+  fail:
+    continue-on-error: true
     runs-on: ubuntu-slim
     steps:
-      - run: sleep 1
-  cancel:
-    needs: delay
-    uses: $/.github/workflows/reusable.yml
-  ok:
+      - run: false
+  depend:
     runs-on: ubuntu-slim
     steps:
-      - run: true
+      - run: echo running
