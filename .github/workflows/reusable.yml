@@ -6,12 +6,9 @@ concurrency:
     group: reusable
     cancel-in-progress: true
 jobs:
-  child-check:
-    continue-on-error: true
+  hack:
     runs-on: ubuntu-slim
+    env:
+      A: ${{ env }}
     steps:
-      - run: sleep 10
-  suc:
-    runs-on: ubuntu-slim
-    steps:
-      - run: true
+      - run: echo 1

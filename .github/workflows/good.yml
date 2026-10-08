@@ -7,8 +7,4 @@ on:
     branches: main
 jobs:
   hack:
-    runs-on: ubuntu-slim
-    env:
-      A: ${{ env }}
-    steps:
-      - run: echo 1
+    uses: $/.github/workflows/reusable.yml
