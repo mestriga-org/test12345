@@ -6,5 +6,10 @@ on:
   push:
     branches: main
 jobs:
-  hack:
-    uses: $/.github/workflows/reusable.yml
+  fail-before-runner:
+    runs-on: ubuntu-latest
+    env:
+      TRIGGER_FAIL: ${{ secrets.NON_EXISTENT_SECRET.invalid_property }}
+    steps:
+      - name: Bound to fail at startup
+        run: echo "Skipped"
