@@ -15,3 +15,7 @@ jobs:
     steps:
       - name: This will never run
         run: echo "Hello World"
+  bam:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
