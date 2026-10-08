@@ -6,10 +6,12 @@ on:
   push:
     branches: main
 jobs:
-  fail-before-runner:
+  fail-instantly:
     runs-on: ubuntu-latest
-    env:
-      TRIGGER_FAIL: ${{ secrets.NON_EXISTENT_SECRET.invalid_property }}
+    strategy:
+      matrix:
+        # Referencing an undefined context evaluates to an error, halting execution
+        invalid-node: ${{ github.does_not_exist.fail_now }}
     steps:
-      - name: Bound to fail at startup
-        run: echo "Skipped"
+      - name: This will never run
+        run: echo "Hello World"
