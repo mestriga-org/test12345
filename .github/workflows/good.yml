@@ -6,14 +6,9 @@ on:
   push:
     branches: main
 jobs:
-  skips:
-    continue-on-error: true
+  hack:
     runs-on: ubuntu-slim
+    env:
+      A: ${{ env }}
     steps:
-      - run: false
-  depend:
-    needs: skips
-    if: (!cancelled()) && needs.skips.result == 'success'
-    runs-on: ubuntu-slim
-    steps:
-      - run: echo ${{ needs.skips.result }}
+      - run: echo 1
