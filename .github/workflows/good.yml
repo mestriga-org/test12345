@@ -6,16 +6,8 @@ on:
   push:
     branches: main
 jobs:
-  fail-instantly:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # Referencing an undefined context evaluates to an error, halting execution
-        invalid-node: ${{ github.does_not_exist.fail_now }}
-    steps:
-      - name: This will never run
-        run: echo "Hello World"
   bam:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - run: exit 0
+        if: false
