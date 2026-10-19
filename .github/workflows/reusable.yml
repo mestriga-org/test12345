@@ -9,4 +9,4 @@ jobs:
   hack:
     runs-on: ubuntu-slim
     steps:
-      - uses: $/nonexistent
+      - run: exit 1
