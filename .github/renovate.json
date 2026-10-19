@@ -2,6 +2,7 @@
   "extends": [
     "local>mestriga-org/renovate-presets"
   ],
+  "enabled": false,
   "packageRules": [
     {
       "matchPackageNames": [

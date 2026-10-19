@@ -3,5 +3,11 @@
 # Docs: https://gh.io/actions-lockfile
 version: 'v0.0.3'
 workflows:
-    '.github/workflows/good.yml': []
-    '.github/workflows/reusable.yml': []
+    '.github/workflows/good.yml':
+        - 'actions/checkout@v7.0.0'
+dependencies:
+    'actions/checkout@v7.0.0':
+        ref: 'v7.0.0'
+        commit: 'sha1-9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+        owner_id: 44036562
+        repo_id: 197814629
