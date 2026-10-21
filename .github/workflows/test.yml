@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+jobs:
+  bam:
+    runs-on: ubuntu-slim
+    steps:
+      - id: octo-sts
+        uses: octo-sts/action@v1.1.1
+        with:
+          scope: ${{ github.repository }}
+          identity: use-action
