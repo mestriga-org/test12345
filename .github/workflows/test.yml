@@ -1,7 +1,9 @@
 on:
   workflow_dispatch:
+permissions: { }
 jobs:
   bam:
+    permissions: { id-token: write }
     runs-on: ubuntu-slim
     steps:
       - id: octo-sts
