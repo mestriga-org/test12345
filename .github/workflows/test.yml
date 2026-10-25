@@ -6,4 +6,4 @@ jobs:
   bam:
     uses: $/.github/workflows/test_inputs.yml
     with:
-      test: abc
+      test: ''
