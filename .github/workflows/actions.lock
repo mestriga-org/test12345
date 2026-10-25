@@ -5,16 +5,11 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/good.yml':
         - 'actions/checkout@v7.0.0'
-    '.github/workflows/test.yml':
-        - 'octo-sts/action@v1.1.1'
+    '.github/workflows/test.yml': []
+    '.github/workflows/test_inputs.yml': []
 dependencies:
     'actions/checkout@v7.0.0':
         ref: 'v7.0.0'
         commit: 'sha1-9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
         owner_id: 44036562
         repo_id: 197814629
-    'octo-sts/action@v1.1.1':
-        ref: 'v1.1.1'
-        commit: 'sha1-f603d3be9d8dd9871a265776e625a27b00effe05'
-        owner_id: 160145231
-        repo_id: 749429568
