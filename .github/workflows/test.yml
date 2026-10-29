@@ -4,5 +4,6 @@ on:
 permissions: { }
 jobs:
   bam:
+    runs-on: ubuntu-slim
     steps:
-      run: env
+      - run: env
