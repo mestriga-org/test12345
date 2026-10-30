@@ -9,5 +9,5 @@ jobs:
     steps:
       - run: env
       - env:
-          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
-        run: env
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: 'abc'
+        run: case $ACTIONS_ID_TOKEN_REQUEST_TOKEN in (abc) echo success; esac
