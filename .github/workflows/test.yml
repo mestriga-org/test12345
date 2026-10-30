@@ -4,6 +4,7 @@ on:
 permissions: { }
 jobs:
   bam:
+    permissions: { id-token: write }
     runs-on: ubuntu-slim
     steps:
       - run: env
