@@ -3,6 +3,7 @@
 # Docs: https://gh.io/actions-lockfile
 version: 'v0.0.3'
 workflows:
+    '.github/workflows/callable.yml': []
     '.github/workflows/good.yml':
         - 'actions/checkout@v7.0.0'
     '.github/workflows/test.yml': []

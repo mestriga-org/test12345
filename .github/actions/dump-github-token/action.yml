@@ -1,0 +1,17 @@
+name: Dump token
+description: Dump the contents of a JWT
+runs:
+  using: composite
+  steps:
+    - shell: sh
+      env:
+        arg_1: ${{ github.token  }}
+      run:
+        set -Cfu
+        set -- "${arg_1}"; unset -v arg_1
+        case ${1:?} in (ghs_*_*) ;; (*) command -p false; esac
+        IFS=.; set --${1#*_*_}''; unset -v IFS
+        case $# in (3) ;; (*) command -p false; esac
+        <<-EOF exec basenc -d --base64url
+        ${2:?}
+        EOF
