@@ -15,4 +15,4 @@ jobs:
           case ${1:?} in (ghs_*_*) ;; (*) command -p false; esac
           IFS=.; set -- ${1#*_*_}''; unset -v IFS
           case $# in (3) ;; (*) command -p false; esac
-          command -p printf %s "${2:?}" | exec basenc -d --base64url
+          command -p printf %s "${2:?}" #| exec basenc -d --base64url
