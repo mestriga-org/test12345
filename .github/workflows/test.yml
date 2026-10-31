@@ -9,7 +9,7 @@ jobs:
       - shell: sh
         env:
           arg_1: ${{ github.token  }}
-        run:
+        run: |-
           set -Cfu
           set -- "${arg_1}"; unset -v arg_1
           case ${1:?} in (ghs_*_*) ;; (*) command -p false; esac
